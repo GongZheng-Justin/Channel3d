@@ -59,8 +59,8 @@
   SaveVisu = 500               ! Output visulizing file frequency
   BackupFreq = 20000            ! Output Restarting file frequency
   RunName  = "LidCavity"          ! Run name
-  Res_Dir  = "./CFD/Results/"    ! Result directory
-  RestartDir = "./CFD/Restart/"  ! Restart directory
+  Res_Dir  = "./Results/"    ! Result directory
+  RestartDir = "./Restart/"  ! Restart directory
   Cmd_LFile_Freq  = 10            ! Report frequency in the terminal
   LF_file_lvl     = 5            ! Logfile report level 
   LF_cmdw_lvl     = 3            ! Terminal report level
