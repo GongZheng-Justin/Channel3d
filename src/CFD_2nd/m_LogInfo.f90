@@ -42,7 +42,6 @@ contains
     character(256):: chFile
     
     chFile = trim(Dir_Res)//"Log file - "//trim(RunName)//".txt"
-    chTitle= "Log file for run :"// trim(RunName)
     call this%OpenFile(nunit, chFile, RunName )
     this%rprt_lvl_file = file_lvl
     this%rprt_lvl_cmdw = cmdw_lvl
