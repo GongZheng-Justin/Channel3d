@@ -10,8 +10,7 @@
 * [Dr. Tschisgale](https://www.researchgate.net/profile/Silvio-Tschisgale) from Institute of Air Handling and Refrigeration, on the fruitful and continuous discussion about their IBM approach.
 * [Prof. Zhao](http://www.hy.tsinghua.edu.cn/publish/hy/1734/2016/20160906103444054482650/20160906103444054482650_.html) from Tsinghua university, on the one-way CFD-Particle coupling benchmark. 
 
-        
+Without those kind researcher, I could do nothing but sleep in the dormotry.        
    
 
 Zheng Gong
-2021/03/08
