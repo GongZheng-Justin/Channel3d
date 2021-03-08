@@ -1,5 +1,5 @@
 Since Oct 2019, when I finally decided to develop my own CFD-DEM code from scratch, I have learnt quite a lot from the following really kind researchers and helpful references:
-  1. Prof. Paolo Orlandi (https://dma.ing.uniroma1.it/users/orlandi/resume.html) from Sapienza University of Rome and his book *Fluid flow phenomena: a numerical toolkit*,
+  *1. Prof. Paolo Orlandi (https://dma.ing.uniroma1.it/users/orlandi/resume.html) from Sapienza University of Rome and his book *Fluid flow phenomena: a numerical toolkit*,
 
 
 ThirdParty part:
