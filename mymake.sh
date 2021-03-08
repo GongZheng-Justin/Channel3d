@@ -46,15 +46,15 @@ echo "  "$CMP"  will be used"                                       | tee -a $Co
 echo                                                                | tee -a $CompilingLog
 
 echo "  Which EXE do you want to compile? "                         | tee -a $CompilingLog
-echo "     1: channel3d_2nd"                                        | tee -a $CompilingLog
-echo "     2: channel3d_4th"                                        | tee -a $CompilingLog
+echo "     1: channel2nd"                                           | tee -a $CompilingLog
+echo "     2: channel4th"                                           | tee -a $CompilingLog
 read -p "  please type a EXE index(1 or 2): " id_exe
 echo    "  please type a EXE index(1 or 2): "$id_exe >> $CompilingLog
 
 if [ $id_exe -eq 1 ]; then
-  EXE="channel3d_2nd"
+  EXE="channel2nd"
 elif [ $id_exe -eq 2 ]; then
-  EXE="channel3d_4th"
+  EXE="channel4th"
 else
   echo "  Sorry, EXE type cannot be recognized."                      | tee -a $CompilingLog
   echo "  Compiling filed"                                            | tee -a $CompilingLog
