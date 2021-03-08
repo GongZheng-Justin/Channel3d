@@ -4,7 +4,7 @@ Since Oct 2019, when I finally decided to develop my own CFD-DEM code from scrat
 3. [Incompact3d](https://github.com/xcompact3d/Incompact3d)
 4. [AFid](https://github.com/PhysicsofFluids/AFiD)
 5. [CaNS](https://github.com/p-costa/CaNS)
-6. [HercuLES]()
+6. [HercuLES](https://github.com/friedenhe/hercules)
 
 
 ThirdParty part:
