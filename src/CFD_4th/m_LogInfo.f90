@@ -61,7 +61,6 @@ contains
     
     this%unit_file = nUnit
     this%chLogFileName = chFile
-    this%chTitle = Title
     if(nrank==0) then
       open(file = chFile, unit = nUnit, status='replace', IOSTAT=myistat)
       write(this%unit_file , *, IOSTAT=myistat ) "**************************************************************************"
