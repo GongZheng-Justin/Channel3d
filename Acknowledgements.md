@@ -10,28 +10,8 @@
 * [Dr. Tschisgale](https://www.researchgate.net/profile/Silvio-Tschisgale) from Institute of Air Handling and Refrigeration, on the fruitful and continuous discussion about their IBM approach.
 * [Prof. Zhao](http://www.hy.tsinghua.edu.cn/publish/hy/1734/2016/20160906103444054482650/20160906103444054482650_.html) from Tsinghua university, on the one-way CFD-Particle coupling benchmark. 
 
-ThirdParty part:
-
-  1. The 'decomp2d' in directory './ThirdParty/' was copied from the open source code 'Incompact3d-3.0'
-            ( Downloaded from: https://github.com/xcompact3d/Incompact3d, about Feb 2020 )
-
-     Some necessary modifications were done:
-        (1) The 'fft-*' parts are deleted.
-
-        (2) The files 'mem_merge.f90' and 'mem_split.f90' are deleted.
-
-        (3) Add two files:  'transpose_x_to_z.inc', and 'transpose_z_to_x.inc' from the open source code 'cans'
-            ( Downloaded from: https://github.com/p-costa/CaNS,  April 17, 2020 )
-            And this two files are almost the same with another open source code 'AFiD', except for the data type.
-            ( Downloaded from: https://github.com/PhysicsofFluids/AFiD, April 26, 2020 )
-
-        (4) Some new lines are added into the 'decomp_2d.f90' to make the codes can handle 'transpose_x_to_z' and 'transpose_z_to_x' directly( According to 'cans' and 'AFiD') . 
-
-        (5) I added a new 'mydecomp_2d_extra.f90' to handle the update_halo more conveniently.
-
-
-  2. The 'fftw3' in directory './ThirdParty/' is a version of fftw-3.3.8. It was added into the 'src' to avoid linking to external 'include' and 'lib'.        
+        
    
 
-    Gong Zheng
-    2021/03/08
+Zheng Gong
+2021/03/08
