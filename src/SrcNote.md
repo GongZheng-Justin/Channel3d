@@ -1,5 +1,5 @@
 # ThirdParty part
-1. The 'decomp2d' in directory './ThirdParty/' was copied from the open source code [Incompact3d-3.0](https://github.com/xcompact3d/Incompact3d),downloaded in Feb 2020.
+1. The 'decomp2d' in directory './ThirdParty/' was copied from the open source code [Incompact3d-3.0](https://github.com/xcompact3d/Incompact3d), downloaded in Feb 2020.
 Some necessary modifications were done:
 * The 'fft-*' parts are deleted.
 * The files 'mem_merge.f90' and 'mem_split.f90' are deleted.
@@ -10,4 +10,5 @@ Some necessary modifications were done:
 2. The 'fftw3' in directory './ThirdParty/' is a version of fftw-3.3.8. It was added into the 'src' to avoid linking to external 'include' and 'lib'.        
    
     Zheng Gong
+    
     2020/05/06
