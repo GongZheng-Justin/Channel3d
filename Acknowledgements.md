@@ -1,5 +1,5 @@
 Since Oct 2019, when I finally decided to develop my own CFD-DEM code from scratch, I have learnt quite a lot from the following really kind researchers and helpful references:
-1. [Prof. Paolo Orlandi](http://dma.ing.uniroma1.it/users/orlandi/resume.html) from Sapienza University of Rome, and his book *Fluid flow phenomena: a numerical toolkit*, besides the [attached code](http://dma.ing.uniroma1.it/users/orlandi/diskette.tar.gz).
+1. [Prof. Paolo Orlandi](http://dma.ing.uniroma1.it/users/orlandi/resume.html) from Sapienza University of Rome, and his book ***Fluid flow phenomena: a numerical toolkit***, besides the [attached code](http://dma.ing.uniroma1.it/users/orlandi/diskette.tar.gz).
 2. [Dr. ]
 
 * [AFiD](https://github.com/PhysicsofFluids/AFiD) [[1](#afid)] - an MPI parallelized numerical solver for DNS of turbulent Rayleigh-Benard and Taylor-Couette flows. Employs pencil distributed finite differences. Developed at the [Physics of Fluids group](https://pof.tnw.utwente.nl/), [University of Twente](https://www.utwente.nl/) and [Universita di Roma Tor Vergata](https://web.uniroma2.it/). 
