@@ -14,8 +14,7 @@ module m_LogInfo
   character(11),parameter,dimension(0:2):: chErrorT = (/"No error   " , "Fatal error" , "Warning    "/)
     
   type LogInfo
-    character(256)::  chLogFileName = "Log_file.txt"
-    character(256)::  chTitle       = "Log_file"
+    character(256)::  chLogFileName = "file.log"
     integer:: rprt_lvl_file = 2
     integer:: rprt_lvl_cmdw = 3
     integer:: unit_file     = 100 
@@ -40,11 +39,10 @@ contains
     integer, intent(in):: nunit
     character(*), intent(in):: Dir_Res, RunName
     integer,intent(in):: file_lvl, cmdw_lvl
-    character(256):: chFile, chTitle
+    character(256):: chFile
     
-    chFile = trim(Dir_Res)//"Log file - "//trim(RunName)//".txt"
-    chTitle= "Log file for run :"// trim(RunName)
-    call this%OpenFile(nunit, chFile, chTitle )
+    chFile = trim(Dir_Res)//trim(RunName)//".log"
+    call this%OpenFile(nunit, chFile, RunName )
     this%rprt_lvl_file = file_lvl
     this%rprt_lvl_cmdw = cmdw_lvl
   end subroutine LI_InitLog
@@ -52,11 +50,11 @@ contains
   !********************************************************************************
   !   LI_OpenFile
   !********************************************************************************
-  subroutine LI_OpenFile(this,nUnit,chFile,Title)
+  subroutine LI_OpenFile(this,nUnit,chFile,RunName)
     implicit none
     class(LogInfo)::this
     integer,intent(in)::nUnit
-    character(*),intent(in)::chFile,Title
+    character(*),intent(in)::chFile,RunName
 
     ! locals
     integer:: myistat
@@ -67,7 +65,7 @@ contains
     if(nrank==0) then
       open(file = chFile, unit = nUnit, status='replace', IOSTAT=myistat)
       write(this%unit_file , *, IOSTAT=myistat ) "**************************************************************************"
-      write(this%unit_file , *, IOSTAT=myistat ) trim(Title)
+      write(this%unit_file , *, IOSTAT=myistat ) "Log file for run :"// trim(RunName)
       write(this%unit_file , *, IOSTAT=myistat ) "**************************************************************************"
       write(this%unit_file , *, IOSTAT=myistat )
     endif
