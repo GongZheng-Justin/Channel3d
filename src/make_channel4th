@@ -8,7 +8,7 @@ CMP       =  gcc_MPI#intel_MPI #intel_serial #gcc_serial
 #   -DDOUBLE_PREC - use double-precision
 #   -DSAVE_SINGLE - Save 3D data in single-precision
 # CFD options
-CFD_exe      =  channel3d_4th
+CFD_exe      =  channel4th
 CFD_dir      =  ./CFD_4th/
 CFD_DEFS     = -DDEBUG -DDOUBLE_PREC
 CFD_inc      = -I./ThirdParty/fftw3/
