@@ -41,7 +41,7 @@ contains
     integer,intent(in):: file_lvl, cmdw_lvl
     character(256):: chFile
     
-    chFile = trim(Dir_Res)//"Log file - "//trim(RunName)//".txt"
+    chFile = trim(Dir_Res)//trim(RunName)//".log"
     call this%OpenFile(nunit, chFile, RunName )
     this%rprt_lvl_file = file_lvl
     this%rprt_lvl_cmdw = cmdw_lvl
