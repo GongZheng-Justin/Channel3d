@@ -31,7 +31,7 @@ contains
     character(256):: ch
    
     !// Initializing main log info
-    ch= 'mkdir '//Res_Dir//' '//RestartDir//' 2> /dev/null'
+    ch= 'mkdir -p '//Res_Dir//' '//RestartDir//' 2> /dev/null'
     if(nrank==0) call system(trim(adjustl(ch)))
     call MainLog%InitLog(d_LogInfo_unit, Res_Dir, RunName, LF_file_lvl, LF_cmdw_lvl)
     if(nrank==0) call DumpReadedParam()
