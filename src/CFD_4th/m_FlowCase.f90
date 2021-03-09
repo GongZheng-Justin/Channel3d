@@ -142,19 +142,19 @@ contains
     type(fftw_iodim),dimension(1)::iodim,iodim_howmany
 
     if(nrank==0) then
-      if(jSpecSet<1 .or. jSpecEnd>nyc) call MainLog%CheckForError(ErrT_Abort,"InitCAStatistics","jSpecSet or jSpecEnd wrong !!!")
-      if(mod(saveStat,ivstats)/=0 )    call MainLog%CheckForError(ErrT_Abort,"InitCAStatistics","ivstats wrong !!!")
+      if(jSpecSet<1 .or. jSpecEnd>nyc) call MainLog%CheckForError(ErrT_Abort,"InitStatVar： ","jSpecSet or jSpecEnd wrong !!!")
+      if(mod(saveStat,ivstats)/=0 )    call MainLog%CheckForError(ErrT_Abort,"InitStatVar： ","ivstats wrong !!!")
       if(clc_Spectra .and. (mod(saveStat,ivSpec)/=0 .or. mod(ivSpec,ivstats)/=0 )) then
         call MainLog%CheckForError(ErrT_Abort,"InitCAStatistics","ivSpec wrong !!!")
       endif
       if(IsUxConst)then
         open(79,file=trim(Res_Dir)//'PrGrad.txt',status='replace',form='formatted',IOSTAT=iErr)
-        if(iErr /= 0) call MainLog%CheckForError(ErrT_Abort,"InitCAStatistics","Cannot open file "//trim(Res_Dir)//'PrGrad.txt')
+        if(iErr /= 0) call MainLog%CheckForError(ErrT_Abort,"InitStatVar： ","Cannot open file "//trim(Res_Dir)//'PrGrad.txt')
         close(79,IOSTAT=iErr)
       endif
     endif
     allocate(SumStat(35,nyp),Stat=iErr)
-    if(iErr /= 0) call MainLog%CheckForError(ErrT_Abort,"InitStatVar_CH: ","Allocation failed")  
+    if(iErr /= 0) call MainLog%CheckForError(ErrT_Abort,"InitStatVar: ","Allocation failed")  
     nfstime=0;  nSpectime=0; SumStat=zero; PrGradsum=zero
     if(.not.clc_Spectra) return
 
