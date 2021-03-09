@@ -77,8 +77,8 @@ contains
     if(nrank/=0) return
     filename=trim(Res_Dir)//'TG_dissp.txt'
     open(69, file=filename,status='replace',form='formatted',IOSTAT=myistat)
-    if(myistat /= 0) call MainLog%CheckForError(ErrT_Abort,"InitStatVar_TG: ",filename)
-    close(69)
+    if(myistat /= 0) call MainLog%CheckForError(ErrT_Abort,"InitStatVar_TG: ","Cannot open file: "//trim(filename))
+    close(69,IOSTAT=myistat)
 
   end subroutine InitStatVar_TG
 
