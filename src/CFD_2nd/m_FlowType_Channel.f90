@@ -113,10 +113,10 @@ contains
     integer::iErr
 
     if(nrank==0) then
-      if(mod(saveStat,ivstats)/=0 )    call MainLog%CheckForError(ErrT_Abort,"InitCAStatistics","ivstats wrong !!!")
+      if(mod(saveStat,ivstats)/=0 )    call MainLog%CheckForError(ErrT_Abort,"InitStatVar_CH","ivstats wrong !!!")
       if(IsUxConst)then
         open(79,file=trim(Res_Dir)//'PrGrad.txt',status='replace',form='formatted',IOSTAT=iErr)
-        if(iErr /= 0) call MainLog%CheckForError(ErrT_Abort,"InitCAStatistics","Cannot open file "//trim(Res_Dir)//'PrGrad.txt')
+        if(iErr /= 0) call MainLog%CheckForError(ErrT_Abort,"InitStatVar_CH","Cannot open file "//trim(Res_Dir)//'PrGrad.txt')
         close(79,IOSTAT=iErr)
       endif
     endif
