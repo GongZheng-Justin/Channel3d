@@ -24,7 +24,7 @@ contains
   
     ! locals
     integer :: ic,jc,kc
-	  real(RK):: VelRef,LenRef,xpt,ypt,zpt,xct,yct,zct
+    real(RK):: VelRef,LenRef,xpt,ypt,zpt,xct,yct,zct
       
     VelRef=one
     LenRef=one
