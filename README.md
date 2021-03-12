@@ -2,7 +2,7 @@
 second- /fourth-order finite-difference direct numerical simulation (DNS) solver with versatile viscous treatments
 
 ## Installation
-&emsp;The present solver has the following prerequisites:
+&emsp;During developing this solver, I often try my best to make it easy-to-use as posibble as I can.The present solver only has the following two prerequisites:
 
 * MPI
 * Gfortran/Intel Fortran
