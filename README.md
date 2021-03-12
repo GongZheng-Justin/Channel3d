@@ -1,5 +1,5 @@
 # Channel3d
-second- /fourth-order finite-difference direct numerical simulation (DNS) solver with versatile viscous treatments
+&emsp;Channel3d is a second- /fourth-order finite-difference direct numerical simulation (DNS) solver with versatile viscous treatments.
 
 ## Installation
 &emsp;During developing this solver, I often try my best to make it easy-to-understand and easy-to-use. As for compilation, present solver only has the following two prerequisites:
