@@ -12,7 +12,7 @@ second- /fourth-order finite-difference direct numerical simulation (DNS) solver
 1. chmod a+x ./mymake.sh
 2. ./mymake.sh
 3. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
-```    
+```
 
 ## Usage
 &emsp;
