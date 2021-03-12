@@ -8,7 +8,7 @@
 * Alternating direction implicit (ADI) is adopted for Helmholtz equations
 * MPI parallelization by means of pencil distributed decomposition, using [2DECOMP&FFT](http://www.2decomp.org/)
 
-## Installation
+## Installation :briefcase:
 &emsp;During developing this solver, I often try my best to make it easy-to-understand and easy-to-use. As for compilation, present solver only has the following two prerequisites:
 
 * MPI
@@ -20,7 +20,7 @@
 2. ./mymake.sh
 3. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 ```
-## Usage
+## Usage :book:
 &emsp;
 
 ## To do list :muscle:
