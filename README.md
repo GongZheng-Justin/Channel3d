@@ -7,13 +7,12 @@ second- /fourth-order finite-difference direct numerical simulation (DNS) solver
 * MPI
 * Gfortran/Intel Fortran (Supporting Fortran 2003 or higher version)
 
-&emsp;After entering the folder `Channe3d-master` in terminal, you can compile the code as followings:
+&emsp;After entering the folder `Channe3d-master` in terminal, you can compile the code as follows:
 ```
 1. chmod a+x ./mymake.sh
 2. ./mymake.sh
 3. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 ```
-
 ## Usage
 &emsp;
 
