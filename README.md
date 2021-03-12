@@ -2,7 +2,7 @@
 second- /fourth-order finite-difference direct numerical simulation (DNS) solver with versatile viscous treatments
 
 ## Installation
-&emsp;During developing this solver, I often try my best to make it easy-to-use. As for compilation, the present solver only has the following two prerequisites:
+&emsp;During developing this solver, I often try my best to make it easy-to-use. As for compilation, present solver only has the following two prerequisites:
 
 * MPI
 * Gfortran/Intel Fortran (Supporting Fortran 2003 or higher version)
@@ -12,7 +12,7 @@ second- /fourth-order finite-difference direct numerical simulation (DNS) solver
 1. open a new terminal, and enter the folder containning this code
 2. chmod a+x ./mymake.sh
 3. ./mymake.sh
-4. choose the correct compiler you use, and the executable you want to compile, following  guidances printed in the terminal
+4. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 ```
 
 
