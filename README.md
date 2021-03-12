@@ -7,7 +7,7 @@ second- /fourth-order finite-difference direct numerical simulation (DNS) solver
 * MPI
 * Gfortran/Intel Fortran (Supporting Fortran2003 or higher version)
 
-&emsp;The steps way to configure and build AFiD are as follows:
+&emsp;The steps to compile Channel3d are as follows:
 ```
 1. open a new terminal, and enter the folder containning this code
 2. chmod a+x ./mymake.sh
