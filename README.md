@@ -23,7 +23,7 @@
 ## Usage
 &emsp;
 
-## To do list :muscle::muscle::muscle:
+## To do list :muscle:
 
 * Fourth-order scheme options for non-periodic directions
 * Adding a passive scalar transport solver
@@ -44,7 +44,7 @@
 * [Prof. Zhao](http://www.hy.tsinghua.edu.cn/info/1154/1829.htm) from Tsinghua university, on the one-way CFD-Particle coupling benchmark.
 * ......
 
-&emsp;Without those researchers' help, I might do nothing but sleep in the dormitory all the days!!!:joy: 
+&emsp;Without those researchers' help, I might do nothing but sleep in the dormitory all the days!!!:joy:  
 &emsp;Thanks so much again and agian !!!
 
 ## Contact and Feedback :e-mail:
