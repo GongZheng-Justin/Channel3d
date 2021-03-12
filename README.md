@@ -1,6 +1,11 @@
 # Channel3d
 second- /fourth-order finite-difference direct numerical simulation (DNS) solver with versatile viscous treatments
 
+## Installation
+&emsp;The AFiD model has the following prerequisites:
+* MPI
+* Gfortran/Intel Fortran
+
 ## Usage
 &emsp;
 
