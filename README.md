@@ -2,7 +2,8 @@
 second- /fourth-order finite-difference direct numerical simulation (DNS) solver with versatile viscous treatments
 
 ## Installation
-&emsp;The AFiD model has the following prerequisites:
+&emsp;The present solver has the following prerequisites:
+
 * MPI
 * Gfortran/Intel Fortran
 
