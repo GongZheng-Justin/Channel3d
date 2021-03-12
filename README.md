@@ -5,7 +5,7 @@ second- /fourth-order finite-difference direct numerical simulation (DNS) solver
 &emsp;During developing this solver, I often try my best to make it easy-to-use. As for compilation, the present solver only has the following two prerequisites:
 
 * MPI
-* Gfortran/Intel Fortran (Surporting Fortran2003 or higher version)
+* Gfortran/Intel Fortran (Supporting Fortran2003 or higher version)
 
 &emsp;The steps way to configure and build AFiD are as follows:
 ```
