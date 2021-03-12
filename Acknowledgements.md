@@ -9,8 +9,7 @@ Since Sep 2019, when I finally decided to develop my own CFD-DEM code from scrat
 * [Prof. Orlandi](http://dma.ing.uniroma1.it/users/orlandi/resume.html) from Sapienza University of Rome, and his book ***Fluid flow phenomena: a numerical toolkit***, besides the [attached CFD code](http://dma.ing.uniroma1.it/users/orlandi/diskette.tar.gz).
 * [Dr. Tschisgale](https://www.researchgate.net/profile/Silvio-Tschisgale) from Institute of Air Handling and Refrigeration, on the fruitful and continuous discussion about their IBM approach.
 * [Prof. Zhao](http://www.hy.tsinghua.edu.cn/publish/hyen/1694/2016/20160906105643145637551/20160906105643145637551_.html) from Tsinghua university, on the one-way CFD-Particle coupling benchmark. 
-* ......
-
+* ......  
   **Without those researchers' help, I might do nothing but sleep in the dormitory all the days !!!**  
   **Thanks so much again and agian !!!**    
 Zheng Gong
