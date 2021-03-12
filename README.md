@@ -8,6 +8,9 @@ second- /fourth-order finite-difference direct numerical simulation (DNS) solver
 * Gfortran/Intel Fortran (Surporting Fortran2003 or higher version)
 
 &emsp;The steps way to configure and build AFiD are as follows:
+```
+chmod a+x ./mymake.sh
+```
 
 
 ## Usage
