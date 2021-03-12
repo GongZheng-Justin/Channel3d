@@ -10,7 +10,7 @@ second- /fourth-order finite-difference direct numerical simulation (DNS) solver
 &emsp;The steps way to configure and build AFiD are as follows:
 ```
 1. open a new terminal, and enter the folder containning this code
-2. type `chmod a+x ./mymake.sh` in terminal
+2. type `chmod a+x /mymake.sh` in terminal
 3. ./mymake.sh
 4. choose the correct compiler you use, and the executable you want to compile, following  guidances printed in the terminal
 ```
