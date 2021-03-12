@@ -27,7 +27,7 @@
 
 * Fourth-order scheme options for non-periodic directions
 * Adding a passive scalar transport solver
-* Hybrid MPI/OpenMP parallelization and GPU acceleration
+* Hybrid MPI/OpenMP parallelization and GPU acceleration  
 &emsp;**Channel3d** presented here is a part of my integral project: **CP3d**, Channnel-Particle 3d, which is still under development, and will be open source in the coming future. 
 
 ## Acknowledgements
