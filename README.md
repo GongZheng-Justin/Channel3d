@@ -4,7 +4,7 @@
 * Versatile viscous treatmens. The viscous term can be handled full implicitly, full explicitly, or partial implicitly
 * Have the ability to handle periodic, no-slip and free-slip boundary conditions
 * Second-order spatial accuray in non-periodic directions, fourth-order scheme is also available for periodic directions 
-* FFT-based method is used for Pressure Poisson Equation (PPE)
+* FFT-based ([FFTW](https://github.com/FFTW/fftw3) used here) method is used for Pressure Poisson Equation (PPE)
 * Alternating direction implicit (ADI) is adopted for Helmholtz equations
 * MPI parallelization by means of pencil distributed decomposition, using [2DECOMP&FFT](http://www.2decomp.org/)
 
@@ -28,7 +28,7 @@
 * Fourth-order scheme options for non-periodic directions
 * Adding a passive scalar transport solver
 * Hybrid MPI/OpenMP parallelization and GPU acceleration  
-* **Channel3d** presented here is a part of my integral project: **CP3d**, Channnel-Particle 3d, which is still under development, and will be open source in the coming future. My ultimate aim for **CP3d** project is to develop an efficient and easy-to-use  particle-laden flow solver, including one-way, two-way, and full four-way coupling methods, by combination with Basset history force model, discrete element method, and immersed boundary method.  
+* **Channel3d** presented here is a part of my integral project: **CP3d**, Channnel-Particle 3d, which is still under development, and will be open source in the coming future. My ultimate aim for **CP3d** project is to develop an efficient and easy-to-use  particle-laden flow solver, including one-way, two-way, and full four-way coupling methods, by combination with Basset history force model, discrete element method (DEM), and immersed boundary method (IBM).  
 
 ## Acknowledgements
 &emsp;Since Sep 2019, when I finally decided to develop my own CFD-DEM code from scratch, I have learnt quite a lot from the following really kind researchers (**in alphabetical sequence**):
