@@ -14,7 +14,7 @@
 * MPI
 * Gfortran/Intel Fortran (Supporting Fortran 2003 or higher version)
 
-&emsp;**FFTW-3.3.8** library has been explicitly included in the direction `./src/ThirdParty/fftw/`, so compiling and additional linking to external FFTW are avoided. After entering the folder `Channe3d-master` in terminal, you can compile the code as follows:
+&emsp;**FFTW-3.3.8** library has been explicitly included in the directory `./src/ThirdParty/fftw/`, so compiling and additional linking to external FFTW are avoided. After entering the folder `Channe3d-master` in terminal, you can compile the code as follows:
 ```
 1. chmod a+x ./mymake.sh
 2. ./mymake.sh
