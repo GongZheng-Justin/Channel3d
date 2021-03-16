@@ -7,6 +7,7 @@
 * FFT-based ([FFTW](https://github.com/FFTW/fftw3) used here) method is used for Pressure Poisson Equation (PPE)
 * Alternating direction implicit (ADI) is adopted for Helmholtz equations
 * MPI parallelization by means of pencil distributed decomposition, using [2DECOMP&FFT](http://www.2decomp.org/)
+![](doc/cha180_small.gif)
 
 ## Installation :briefcase:
 &emsp;During developing this solver, I often try my best to make it easy-to-understand and easy-to-use. As for compilation, present solver only has the following two prerequisites:
