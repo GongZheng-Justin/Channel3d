@@ -1,7 +1,7 @@
 # Channel3d
 &emsp;**Channel3d** is an efficient second- /fourth-order finite-difference direct numerical simulation (DNS) solver with versatile viscous treatments, also with the ability to handle different boundary conditions:
 
-* Versatile viscous treatmens. The viscous term can be handled full implicitly, full explicitly, or partial implicitly
+* Versatile viscous treatments. The viscous term can be handled full implicitly, full explicitly, or partial implicitly
 * Have the ability to handle periodic, no-slip and free-slip boundary conditions
 * Second-order spatial accuray in non-periodic directions, fourth-order scheme is also available for periodic directions 
 * FFT-based ([FFTW](https://github.com/FFTW/fftw3) used here) method is used for Pressure Poisson Equation (PPE)
