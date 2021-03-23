@@ -46,10 +46,10 @@ mpirun -n [np] [exeName] [inputFile]
 mpirun -n 4 ./channel2nd ./Input/LidCavity.prm
 ```
 ### Input file
-
 &emsp;The input file examples are stored in the folder `./Input/`. See `./Input/channel2nd_prm.md` and `./Input/channel4th_prm.md` for detailed descriptions to the input file for second-order and fourth-order scheme respectively.
 
 ### A complete example
+&emsp;See `./doc/Toturial_for_channel_turbulence_4th` for a complete example to the wall-bounded turbulece at $Re_t$=180
 
 ## To do list :muscle:
 
