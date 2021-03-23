@@ -21,15 +21,15 @@
 2. ./mymake.sh
 3. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 ```
-&emsp;Yon can also compile the `interploteFiled` code in the folder `./Tool/interploteFiled/` by typing:
+&emsp;Yon can also compile the `interploteField` code in the folder `./Tool/interpolateField/` by typing:
 ```
-1. cd ./Tool/interploteFiled
+1. cd ./Tool/interpolateField
 2. chmod a+x ./makeInterp.sh
 3. ./makeInterp.sh
 4. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 5. cd ../..
 ```
-&emsp;If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be contained in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interploteFiled/`.
+&emsp;If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be contained in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interpolateField/`.
 
 ## Usage :book:
 &emsp;After compiling the code successfully, you can run the executable file like that:
