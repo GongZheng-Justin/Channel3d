@@ -21,8 +21,27 @@
 2. ./mymake.sh
 3. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 ```
+Yon can also compile the `interploteFiled` code in the folder `./Tool/interploteFiled` by typing:
+```
+1. cd ./Tool/interploteFiled
+2. chmod a+x ./makeInterp.sh
+3. ./makeInterp.sh
+4. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
+5. cd ../..
+```
 ## Usage :book:
-&emsp;
+&emsp;After compiling the code successfully, you can run the executable file like that:
+```
+mpirun -n [np] [exeName] [inputFile]
+```
+Here:
+* `np` denotes the number of processors you use
+* `exeName` stands for specific executable file name, namely `channel2nd or channel4th`
+* `inputFile` is the name string for the input parameter file
+For instatance, if you want to run the cavity case, you can type the following words in your terminal
+```
+mpirun -n 4 ./channel2nd ./Input/LidCavity.prm
+```
 
 ## To do list :muscle:
 
@@ -36,7 +55,7 @@
 
 * [Dr. Costa](https://p-costa.github.io/) from University of Iceland, and his second-order DNS code [CaNS](https://github.com/p-costa/CaNS), also his papers on IBM approach.
 * [Dr. He](https://www.engineering.iastate.edu/people/profile/phe/) from Iowa State University, and his fourth-order DNS solver [HercuLES](https://github.com/friedenhe/hercules).
-* [Prof. Ji](http://faculty.tju.edu.cn/ChunningJi/en/index.htm) from Tianji University, on the fruitful discussion about the particle IBM method, and on the accsee to their in-house DNS/LES-Solid interaction code **_cgLES_**.
+* [Prof. Ji](http://faculty.tju.edu.cn/ChunningJi/en/index.htm) from Tianji University, on the fruitful discussion about the particle IBM method, and on the access to their in-house DNS/LES-Solid interaction code **_cgLES_**.
 * [Dr. Laizet](http://www.imperial.ac.uk/people/s.laizet) from Imperial College London, and their compact FD code [Incompact3d](https://github.com/xcompact3d/Incompact3d).
 * [Prof. Marchioli](http://158.110.32.35/) from University of Udine, on the fruitful and continuous discussion about one-way CFD-Particle coupling benchmark and on the access to their [benckmark data](http://158.110.32.35/download/DNS-TEST-CASE/).
 * [Dr. Norouzi](https://www.researchgate.net/profile/Hamid-Norourzi) from University of Tehran, and his book **_Coupled CFD‐DEM Modeling: Formulation, Implementation and Applimation to Multiphase Flows_**, besides the [attached DEM code](https://www.wiley.com//legacy/wileychi/norouzi/form.html?type=SupplementaryMaterial).
