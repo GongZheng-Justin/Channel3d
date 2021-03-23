@@ -15,13 +15,13 @@
 * MPI
 * Gfortran/Intel Fortran (Supporting Fortran 2003 or higher version)
 
-&emsp;**FFTW-3.3.8** library has been explicitly included in the directory `./src/ThirdParty/fftw/`, so compiling and additional linking to external FFTW are avoided. After entering the folder `Channe3d-master` in terminal, you can compile the code as follows:
+&emsp;**FFTW-3.3.8** library has been explicitly included in the directory `./src/ThirdParty/fftw/`, so compiling and additional linking to external FFTW are avoided. After entering the folder `Channe3d-master/` in terminal, you can compile the code as follows:
 ```
 1. chmod a+x ./mymake.sh
 2. ./mymake.sh
 3. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 ```
-Yon can also compile the `interploteFiled` code in the folder `./Tool/interploteFiled` by typing:
+Yon can also compile the `interploteFiled` code in the folder `./Tool/interploteFiled/` by typing:
 ```
 1. cd ./Tool/interploteFiled
 2. chmod a+x ./makeInterp.sh
@@ -29,6 +29,7 @@ Yon can also compile the `interploteFiled` code in the folder `./Tool/interplote
 4. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 5. cd ../..
 ```
+If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be contained in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interploteFiled/`.
 ## Usage :book:
 &emsp;After compiling the code successfully, you can run the executable file like that:
 ```
