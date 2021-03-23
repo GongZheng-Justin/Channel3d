@@ -38,7 +38,7 @@
 &emsp;Here:
 * `np` denotes the number of processors you use
 * `exeName` stands for specific executable file name, namely `channel2nd` or `channel4th`
-* `inputFile` is the name string for the input parameter file
+* `inputFile` is the name string for the input parameter file  
 &emsp;For instatance, if you want to run the cavity case, you can type the following words in your terminal
 ```
 mpirun -n 4 ./channel2nd ./Input/LidCavity.prm
