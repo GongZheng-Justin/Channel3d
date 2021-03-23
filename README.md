@@ -29,7 +29,7 @@
 4. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 5. cd ../..
 ```
-&emsp;If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be appeared in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interpolateField/`.
+&emsp;If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be appeared in the folder `Channe3d-master/`, and `interpolateField` will be included in the folder `./Tool/interpolateField/`.
 
 ## Usage :book:
 &emsp;After compiling the code successfully, you can run the executable file like that:
