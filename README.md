@@ -3,7 +3,7 @@
 
 * Versatile viscous treatments. The viscous term can be handled full implicitly, full explicitly, or partial implicitly
 * Have the ability to handle periodic, no-slip and free-slip boundary conditions
-* Second-order spatial accuray in non-periodic directions, fourth-order scheme is also available for periodic directions 
+* Second-order spatial accuray in non-periodic directions, and fourth-order scheme is also available for periodic directions 
 * FFT-based ([FFTW](https://github.com/FFTW/fftw3) used here) method is used for Pressure Poisson Equation (PPE)
 * Alternating Direction Implicit (ADI) method is adopted for Helmholtz equations
 * MPI parallelization by means of pencil distributed decomposition, using [2DECOMP&FFT](http://www.2decomp.org/)
@@ -29,7 +29,7 @@
 4. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 5. cd ../..
 ```
-&emsp;If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be contained in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interpolateField/`.
+&emsp;If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be appeared in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interpolateField/`.
 
 ## Usage :book:
 &emsp;After compiling the code successfully, you can run the executable file like that:
@@ -41,7 +41,7 @@ mpirun -n [np] [exeName] [inputFile]
 * `exeName` stands for specific executable file name, namely `channel2nd` or `channel4th`
 * `inputFile` is the name string for the input parameter file  
 
-&emsp;For instatance, if you want to run the lid-driven cavity case, you can type the following words in your terminal:
+&emsp;For instance, if you want to run the lid-driven cavity case, you can type the following words in your terminal:
 ```
 mpirun -n 4 ./channel2nd ./Input/LidCavity.prm
 ```
