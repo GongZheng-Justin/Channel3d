@@ -21,7 +21,7 @@
 2. ./mymake.sh
 3. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 ```
-&emsp;Yon can also compile the `interploteField` code in the folder `./Tool/interpolateField/` by typing:
+&emsp;Yon can also compile the `interpolateField` code in the folder `./Tool/interpolateField/` by typing:
 ```
 1. cd ./Tool/interpolateField
 2. chmod a+x ./makeInterp.sh
