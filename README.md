@@ -3,7 +3,7 @@
 
 * Versatile viscous treatments. The viscous term can be handled full implicitly, full explicitly, or partial implicitly
 * Have the ability to handle periodic, no-slip and free-slip boundary conditions
-* Second-order spatial accuray in non-periodic directions, and fourth-order scheme is also available for periodic directions 
+* Second-order spatial accuracy in non-periodic directions, and fourth-order scheme is also available for periodic directions 
 * FFT-based ([FFTW](https://github.com/FFTW/fftw3) used here) method is used for Pressure Poisson Equation (PPE)
 * Alternating Direction Implicit (ADI) method is adopted for Helmholtz equations
 * MPI parallelization by means of pencil distributed decomposition, using [2DECOMP&FFT](http://www.2decomp.org/)
