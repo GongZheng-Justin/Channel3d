@@ -30,6 +30,7 @@
 5. cd ../..
 ```
 &emsp;If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be contained in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interploteFiled/`.
+
 ## Usage :book:
 &emsp;After compiling the code successfully, you can run the executable file like that:
 ```
@@ -44,6 +45,11 @@ mpirun -n [np] [exeName] [inputFile]
 ```
 mpirun -n 4 ./channel2nd ./Input/LidCavity.prm
 ```
+### Input file
+
+&emsp;The input file examples are stored in the folder `./Input/`. See `./Input/channel2nd_prm.md` and `./Input/channel4th_prm.md` for detailed descriptions to the input file for second-order and fourth-order scheme respectively.
+
+### A complete example
 
 ## To do list :muscle:
 
