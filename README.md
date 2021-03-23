@@ -33,7 +33,7 @@
 ## Usage :book:
 &emsp;After compiling the code successfully, you can run the executable file like that:
 ```
-&emsp;mpirun -n [np] [exeName] [inputFile]
+mpirun -n [np] [exeName] [inputFile]
 ```
 &emsp;Here:
 * `np` denotes the number of processors you use
