@@ -21,7 +21,7 @@
 2. ./mymake.sh
 3. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 ```
-Yon can also compile the `interploteFiled` code in the folder `./Tool/interploteFiled/` by typing:
+&emsp;Yon can also compile the `interploteFiled` code in the folder `./Tool/interploteFiled/` by typing:
 ```
 1. cd ./Tool/interploteFiled
 2. chmod a+x ./makeInterp.sh
@@ -29,17 +29,17 @@ Yon can also compile the `interploteFiled` code in the folder `./Tool/interplote
 4. choose the correct compiler you use, and the executable you want to compile, following guidances printed in the terminal
 5. cd ../..
 ```
-If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be contained in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interploteFiled/`.
+&emsp;If the compiling process successfully, the executable file(s) `channel2nd`/`channel4th` will be contained in the folder `Channe3d-master`, and `interpolateField` will be included in the folder `./Tool/interploteFiled/`.
 ## Usage :book:
 &emsp;After compiling the code successfully, you can run the executable file like that:
 ```
-mpirun -n [np] [exeName] [inputFile]
+&emsp;mpirun -n [np] [exeName] [inputFile]
 ```
-Here:
+&emsp;Here:
 * `np` denotes the number of processors you use
 * `exeName` stands for specific executable file name, namely `channel2nd` or `channel4th`
 * `inputFile` is the name string for the input parameter file
-For instatance, if you want to run the cavity case, you can type the following words in your terminal
+&emsp;For instatance, if you want to run the cavity case, you can type the following words in your terminal
 ```
 mpirun -n 4 ./channel2nd ./Input/LidCavity.prm
 ```
