@@ -1,0 +1,60 @@
+!
+! -*- input parameter for interpolateField -*-
+!
+! -*- mode: f90 -*-
+
+!===================
+&BasicParam
+!===================
+
+  IsUxConst = T
+  ubulk= 0.666666666666666666666666666667
+
+  ! Mesh options
+  yly    =  2
+
+  nxpOld =  181              ! grid point number in x-dir
+  nypOld =  133              ! grid point number in y-dir
+  nzpOld =  101              ! grid point number in z-dir
+  StretTypeOld= 1            ! 0:tangent hyperbolic function, 1:sine/cosine function
+  istretOld   = 1            ! Stretch y-mesh or not (For 2nd, 0:no, 1:center, 2:both sides, 3:bottom; For 4th, 0:no, 1:both sides, 2:bottom;)
+  cStretOld   = 1.0          ! Stretching parameter, if istret=0. this parameter doesn't work.
+  nyUniformOld= 0            ! If nyUniform>0 and istret /= 0, the first nyUniform grids near bottom will set to be uniform.
+  yUniformOld = 0.1          ! If nyUniform>0 and istret /= 0, the first nyUniform grids in [0,yUniform] will be uniform.  
+
+  nxpNew =  385              ! grid point number in x-dir
+  nypNew =  193              ! grid point number in y-dir
+  nzpNew =  181              ! grid point number in z-dir
+  StretTypeNew= 1            ! 0:tangent hyperbolic function, 1:sine/cosine function
+  istretNew   = 1            ! Stretch y-mesh or not (For 2nd, 0:no, 1:center, 2:both sides, 3:bottom; For 4th, 0:no, 1:both sides, 2:bottom;)
+  cStretNew   = 1.0          ! Stretching parameter, if istret=0. this parameter doesn't work.
+  nyUniformNew= 0            ! If nyUniform>0 and istret /= 0, the first nyUniform grids near bottom will set to be uniform.
+  yUniformNew = 0.1          ! If nyUniform>0 and istret /= 0, the first nyUniform grids in [0,yUniform] will be uniform.  
+
+  ! Boundary conditions
+  !  0 : periodic conditions for all variables
+  ! -1: no slip for three velocity components and ZERO GRADIENT for pressure field
+  ! -2: free slip for three velocity components and ZERO GRADIENT for pressure field
+  ! From left to right: 
+  !                    x-,  x+,  y-,  y+,  z-,  z+
+  ! And the velocity Bc values will ONLY be used corresponding to the no-slip Bc
+  ! While at the same time, you are allow to assign a  transpiration Bc for uy in y- bottom(uyBcValue(3) dosen't work).
+  BcOption  =  0,   0,   -1,   -1,  0,   0
+  uxBcValue = 0.0, 0.0,  0.0,  0.0,  0.0,  0.0
+  uyBcValue = 0.0, 0.0,  0.0,  0.0,  0.0,  0.0    
+  uzBcValue = 0.0, 0.0,  0.0,  0.0,  0.0,  0.0 
+
+  ! I/O, Statistics
+  RunName  = "interp1"    ! Run name
+  Res_Dir  = "./"         ! Result directory
+  OldRestartName  = "../../CFD/Restart/RestartForCha180_1_0000003000"
+  NewRestartName  = "../../CFD/Restart/RestartForCha180_0000003000"
+  Cmd_LFile_Freq  = 5         ! Report frequency in the terminal
+  LF_file_lvl     = 5         ! Logfile report level 
+  LF_cmdw_lvl     = 3         ! Terminal report level
+
+  ! Decomp2d options
+  p_row = 4
+  p_col = 2
+
+/End of NAMELIST "&BasicParam"
