@@ -127,72 +127,71 @@
 ## BasicParam
 &emsp;**BasicParam** specifies several basic parameters, e.g. mesh options, physical properties.
 
-* RestartFlag: logical type. Restart or not. If RestartFlag=.true., the simulation will start from a prestored restarting file.
-* FlowType: integer type. Specify the flow type, 1=Channel, 2=Half channel, 3=Taylor-Green vortex, 4=Isotropic turbulence, 5=Added new. This parameter is also used to set initial flow field. **Note:** So far, 4=Isotropic turbulence has not been available.
-* ubulk: real type. Mean bulk velocity in x-direction. This parameter is only used for wall-bounded turbulent channel flows (channel or half channel) to set the initial mean streamwise velocity.
-* IsUxConst:  logical type. Whether ux is constant or not. This parameter is only used for wall-bounded turbulent channel flows (channel or half channel). If IsUxConst=.true., the turbulent channel flow is driven by a uniform pressure gradient, which varies in time to maintain a constant mass flow rate in streamwise (x) direction. If IsUxConst=.false., the uniform pressure gradient will be also constant in time, which is set by parameter `gravity`.
-* xlx: real type. Domain length in x-direction.
-* yly: real type. Domain length in y-direction.
-* zlz: real type. Domain length in z-direction.
-* nxp: integer type. Grid point number in x-direction. **Note:** If nxp=129, there will be 129 grid points in x-direction, and the x-domain will be divided into 128 parts.
-* nyp: integer type. Grid point number in y-direction.
-* nzp: integer type. Grid point number in z-direction.
-* istret: integer type. Whether y-mesh is stretched or not. 0:no, 1:center, 2:both sides, 3:bottom. Hyperbolic tangent function is used here.See file `../src/CFD_2nd/m_MeshAndMetries.f90` for more information.
-* cStret: real type. Corresponding stretching parameter, if istret=0. this parameter doesn't work.
-* nyUniform: integer type. If nyUniform>0 and istret /= 0, the first nyUniform grids near bottom will set to be uniform.
-* yUniform: real type. If nyUniform>0 and istret /= 0, the first nyUniform grids in [0,yUniform] will be uniform.
-* xnu: real type. Kinematic viscosity.
-* gravity: real vector containing 3 components. Gravity or other constant body forces (if any), which can be used to drive the flow.
-* dtMax: real type. Maxium allowable time step. If iCFL=1, `dt` will adjust according to the allowable CFL number. `dt=min{dtMax, CFLc/max(|u|/dx+|v|/dy+|w|/dz)}`. If iCFL=2, `dt=dtMax`. 
-* iCFL: integer type. Whether use CFL condition to change time step dynamically or not. 1:yes, 2:no.
-* CFLc: real type. Allowable CFL parameter. If iCFL=2, this parameter will not work.
-* ifirst: integer type. First iteration.
-* ilast:  integer type. Last iteration.
-* ischeme: integer type. Specify the time integral scheme. 1=AB2, 2=RK3.
-* IsImplicit: integer type. Whether the viscous term will be treated implicit or not. 0=full explicit, 1=partial implicit, 2=full implicit.
-* FFTW_plan_type: integer type. 1=FFTW_MEASURE, 2=FFTW_ESTIMATE. **Note:** In my practice, using *FFTW_MEASURE* is faster than *FFTW_ESTIMATE*, while *FFTW_MEASURE* might lead to different *FFTW_plan*, even for the same simulation case. And further, different *FFTW_plan* will result in slight different DFT values (The last several digits of the decimal point might be different). If you want to debug the code, please use *FFTW_ESTIMATE*, which will lead to the same DFT values for a specific case.
-* BcOption: integer vector containing 6 components, and one component is used to specify one boudary conditions. From left to right: x-, x+, y-, y+, z-, z+. (0: periodic conditions for all variables; -1: no slip for three velocity components and ZERO GRADIENT for pressure field; -2: free slip for three velocity components and ZERO GRADIENT for pressure field).
-* uxBcValue: real vector containing 6 components to specify the u-velocity Bc values, and these values will ONLY be used corresponding to the no-slip Bc.
-* uyBcValue: real vector containing 6 components to specify the v-velocity Bc values.
-* uzBcValue: real vector containing 6 components to specify the w-velocity Bc values.
-* ivstats: integer type. Time step interval for statistics calculation. The statistic value will be calculated every `ivstats` time step.
-* SaveStat: integer type. Output Statistics file frequency. The statistic value will be written to the folder `Res_Dir` every `SaveStat` time step.
-* SaveVisu: integer type. Output visualizing file frequency. The visualizing data will be written to the folder `Res_Dir` every `SaveVisu` time step.
-* BackupFreq: integer type. Output restarting file frequency. The restarting file will be be written to the folder `RestartDir` every `BackupFreq` time step, and the previous restarting file will be deleted in order to save memory room.
-* RunName: character type. Run name string.
-* Res_Dir: character type. The folder to store result data.
-* RestartDir: character type. The folder to store restart data.
-* Cmd_LFile_Freq: integer type. Reporting frequency. Reporting information  will be printed to the terminal and written to the logfile every `Cmd_LFile_Freq` time step.
-* LF_file_lvl: integer type. Logfile report level. From 1 to 5. `5` means every message will be reported into logfile, smaller `LF_file_lvl` corresponds to less reported message.
-* LF_cmdw_lvl: integer type. Terminal report level. From 1 to 5.
-* p_row: integer type. Number of processors in row pencil.
-* p_col: integer type. Number of processors in column pencil.
-* vel_limit: real type. Maximum allowable velocity. If `min{|u|,|v|,|w|}>vel_limit`, the program will abort.
-* div_limit: real type. Maximum allowable divergence. If `max{abs(du/dx +dv/dy + dw/dz)}>div_limit`, the program will abort.
+* `RestartFlag`: logical type. Restart or not. If RestartFlag=.true., the simulation will start from a prestored restarting file.
+* `FlowType`: integer type. Specify the flow type, 1=Channel, 2=Half channel, 3=Taylor-Green vortex, 4=Isotropic turbulence, 5=Added new. This parameter is also used to set initial flow field. **Note:** So far, 4=Isotropic turbulence has not been available.
+* `ubulk`: real type. Mean bulk velocity in x-direction. This parameter is only used for wall-bounded turbulent channel flows (channel or half channel) to set the initial mean streamwise velocity.
+* `IsUxConst`:  logical type. Whether ux is constant or not. This parameter is only used for wall-bounded turbulent channel flows (channel or half channel). If IsUxConst=.true., the turbulent channel flow is driven by a uniform pressure gradient, which varies in time to maintain a constant mass flow rate in streamwise (x) direction. If IsUxConst=.false., the uniform pressure gradient will be also constant in time, which is set by parameter `gravity`.
+* `xlx`: real type. Domain length in x-direction.
+* `yly`: real type. Domain length in y-direction.
+* `zlz`: real type. Domain length in z-direction.
+* `nxp`: integer type. Grid point number in x-direction. **Note:** If nxp=129, there will be 129 grid points in x-direction, and the x-domain will be divided into 128 parts.
+* `nyp`: integer type. Grid point number in y-direction.
+* `nzp`: integer type. Grid point number in z-direction.
+* `istret`: integer type. Whether y-mesh is stretched or not. 0:no, 1:center, 2:both sides, 3:bottom. Hyperbolic tangent function is used here.See file `../src/CFD_2nd/m_MeshAndMetries.f90` for more information.
+* `cStret`: real type. Corresponding stretching parameter, if istret=0. this parameter doesn't work.
+* `nyUniform`: integer type. If nyUniform>0 and istret /= 0, the first nyUniform grids near bottom will set to be uniform.
+* `yUniform`: real type. If nyUniform>0 and istret /= 0, the first nyUniform grids in [0,yUniform] will be uniform.
+* `xnu`: real type. Kinematic viscosity.
+* `gravity`: real vector containing 3 components. Gravity or other constant body forces (if any), which can be used to drive the flow.
+* `dtMax`: real type. Maxium allowable time step. If iCFL=1, `dt` will adjust according to the allowable CFL number. `dt=min{dtMax, CFLc/max(|u|/dx+|v|/dy+|w|/dz)}`. If iCFL=2, `dt=dtMax`. 
+* `iCFL`: integer type. Whether use CFL condition to change time step dynamically or not. 1:yes, 2:no.
+* `CFLc`: real type. Allowable CFL parameter. If iCFL=2, this parameter will not work.
+* `ifirst`: integer type. First iteration.
+* `ilast`:  integer type. Last iteration.
+* `ischeme`: integer type. Specify the time integral scheme. 1=AB2, 2=RK3.
+* `IsImplicit`: integer type. Whether the viscous term will be treated implicit or not. 0=full explicit, 1=partial implicit, 2=full implicit.
+* `FFTW_plan_type`: integer type. 1=FFTW_MEASURE, 2=FFTW_ESTIMATE. **Note:** In my practice, using *FFTW_MEASURE* is faster than *FFTW_ESTIMATE*, while *FFTW_MEASURE* might lead to different *FFTW_plan*, even for the same simulation case. And further, different *FFTW_plan* will result in slight different DFT values (The last several digits of the decimal point might be different). If you want to debug the code, please use *FFTW_ESTIMATE*, which will lead to the same DFT values for a specific case.
+* `BcOptio`n: integer vector containing 6 components, and one component is used to specify one boudary conditions. From left to right: x-, x+, y-, y+, z-, z+. (0: periodic conditions for all variables; -1: no slip for three velocity components and ZERO GRADIENT for pressure field; -2: free slip for three velocity components and ZERO GRADIENT for pressure field).
+* `uxBcValue`: real vector containing 6 components to specify the u-velocity Bc values, and these values will ONLY be used corresponding to the no-slip Bc.
+* `uyBcValue`: real vector containing 6 components to specify the v-velocity Bc values.
+* `uzBcValue`: real vector containing 6 components to specify the w-velocity Bc values.
+* `ivstats`: integer type. Time step interval for statistics calculation. The statistic value will be calculated every `ivstats` time step.
+* `SaveStat`: integer type. Output Statistics file frequency. The statistic value will be written to the folder `Res_Dir` every `SaveStat` time step.
+* `SaveVisu`: integer type. Output visualizing file frequency. The visualizing data will be written to the folder `Res_Dir` every `SaveVisu` time step.
+* `BackupFreq`: integer type. Output restarting file frequency. The restarting file will be be written to the folder `RestartDir` every `BackupFreq` time step, and the previous restarting file will be deleted in order to save memory room.
+* `RunName`: character type. Run name string.
+* `Res_Dir`: character type. The folder to store result data.
+* `RestartDir`: character type. The folder to store restart data.
+* `Cmd_LFile_Freq`: integer type. Reporting frequency. Reporting information  will be printed to the terminal and written to the logfile every `Cmd_LFile_Freq` time step.
+* `LF_file_lvl`: integer type. Logfile report level. From 1 to 5. `5` means every message will be reported into logfile, smaller `LF_file_lvl` corresponds to less reported message.
+* `LF_cmdw_lvl`: integer type. Terminal report level. From 1 to 5.
+* `p_row`: integer type. Number of processors in row pencil.
+* `p_col`: integer type. Number of processors in column pencil.
+* `vel_limit`: real type. Maximum allowable velocity. If `min{|u|,|v|,|w|}>vel_limit`, the program will abort.
+* `div_limit`: real type. Maximum allowable divergence. If `max{abs(du/dx +dv/dy + dw/dz)}>div_limit`, the program will abort.
 
 ## LesOptions
 &emsp;**LesOptions** designates Large-eddy simulation options.
 
-* LES_type: integer type. 0:none; 1:Smagorinsky Model; 2:constant Smagorinsky Model; 3:Dynamic Smagorinsky Model; 4:MTS Model. **Note:** Now, ONLY 4:MTS Model is available, and the other LES models will be added in the future.
-* FilterType: integer type. LES filter type. 0:trapezoidal type, 1:Simpson type.
+* `LES_type`: integer type. 0:none; 1:Smagorinsky Model; 2:constant Smagorinsky Model; 3:Dynamic Smagorinsky Model; 4:MTS Model. **Note:** Now, ONLY 4:MTS Model is available, and the other LES models will be added in the future.
+* `FilterType`: integer type. LES filter type. 0:trapezoidal type, 1:Simpson type.
 
 ## IO_Options
 &emsp;**IO_Options** sets input/output options.
 
-* iskip: integer type. Flow data will be written into output visualizing file every `iskip` grid mesh in x-dir.
-* jskip: integer type. Flow data will be written into output visualizing file every `jskip` grid mesh in y-dir.
-* kskip: integer type. Flow data will be written into output visualizing file every `kskip` grid mesh in z-dir.
-* XDMF_SET_TYPE: integer type. The output XDMF_SET_TYPE, 0: cell, 1:Node. 
-* save_ux: logical type. Save u-velocity or not.
-* save_uy: logical type. Save v-velocity or not.
-* save_uz: logical type. Save w-velocity or not.
-* save_wx: logical type. Save x-vorticity or not.
-* save_wy: logical type. Save y-vorticity or not.
-* save_wz: logical type. Save z-vorticity or not.
-* save_wMag: logical type. Save vorticity magnitude or not.
-* save_pr: logical type, Save pressure or not.
-* save_Q_vor: logical type. Save Q vortex criterion value or not.
-* save_lamda2: logical type. Save lamda2 vortex criterion value or not.
-* WriteHistOld: logical type. Write the old convective data (more exactly, the terms which are treated explicitly) to restart value or not.
-* ReadHistOld: logical type. Read the old convective data (more exactly, the terms which are treated explicitly) to restart value or not. This parameter, coupled with the previous one `WriteHistOld`, can help us to make the program restarting more flexible. Sometimes, we want to restart a `AB2` case from `RK3` case. `AB2` integral approach need the old convective data, while `RK3` method not. So, if we want to restart a `AB2` case from `RK3` case, we can set `ReadHistOld=F` for `AB2` case. If we want to restart a `AB2` case from a previous `AB2` case, we can set `ReadHistOld=T` for the new `AB2` case, and `WriteHistOld=T` for the previous case. If we want to restart a `RK3` case from `AB2` case, we can set `WriteHistOld=F` for the previous `AB2` case.
-
+* `iskip`: integer type. Flow data will be written into output visualizing file every `iskip` grid mesh in x-dir.
+* `jskip`: integer type. Flow data will be written into output visualizing file every `jskip` grid mesh in y-dir.
+* `kskip`: integer type. Flow data will be written into output visualizing file every `kskip` grid mesh in z-dir.
+* `XDMF_SET_TYPE`: integer type. The output XDMF_SET_TYPE, 0: cell, 1:Node. 
+* `save_ux`: logical type. Save u-velocity or not.
+* `save_uy`: logical type. Save v-velocity or not.
+* `save_uz`: logical type. Save w-velocity or not.
+* `save_wx`: logical type. Save x-vorticity or not.
+* `save_wy`: logical type. Save y-vorticity or not.
+* `save_wz`: logical type. Save z-vorticity or not.
+* `save_wMag`: logical type. Save vorticity magnitude or not.
+* `save_pr`: logical type, Save pressure or not.
+* `save_Q_vor`: logical type. Save Q vortex criterion value or not.
+* `save_lamda2`: logical type. Save lamda2 vortex criterion value or not.
+* `WriteHistOld`: logical type. Write the old convective data (more exactly, the terms which are treated explicitly) to restart value or not.
+* `ReadHistOld`: logical type. Read the old convective data (more exactly, the terms which are treated explicitly) to restart value or not. This parameter, coupled with the previous one `WriteHistOld`, can help us to make the program restarting more flexible. Sometimes, we want to restart a `AB2` case from `RK3` case. `AB2` integral approach need the old convective data, while `RK3` method not. So, if we want to restart a `AB2` case from `RK3` case, we can set `ReadHistOld=F` for `AB2` case. If we want to restart a `AB2` case from a previous `AB2` case, we can set `ReadHistOld=T` for the new `AB2` case, and `WriteHistOld=T` for the previous case. If we want to restart a `RK3` case from `AB2` case, we can set `WriteHistOld=F` for the previous `AB2` case.
