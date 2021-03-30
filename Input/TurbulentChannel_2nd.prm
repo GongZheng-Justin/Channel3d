@@ -17,7 +17,7 @@
   ! Mesh options
   xlx = 12.56637061       ! domain length in x-dir
   yly = 2.0               ! domain length in y-dir 
-  zlz = 6.283185307       ! domain length in z-dir
+  zlz = 3.141592654       ! domain length in z-dir
   nxp =  257              ! grid point number in x-dir
   nyp =  151              ! grid point number in y-dir
   nzp =  129              ! grid point number in z-dir
