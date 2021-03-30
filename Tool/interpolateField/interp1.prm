@@ -15,7 +15,7 @@
 
   nxpOld =  181              ! grid point number in x-dir
   nypOld =  133              ! grid point number in y-dir
-  nzpOld =  101              ! grid point number in z-dir
+  nzpOld =  121              ! grid point number in z-dir
   StretTypeOld= 1            ! 0:tangent hyperbolic function, 1:sine/cosine function
   istretOld   = 1            ! Stretch y-mesh or not (For 2nd, 0:no, 1:center, 2:both sides, 3:bottom; For 4th, 0:no, 1:both sides, 2:bottom;)
   cStretOld   = 1.0          ! Stretching parameter, if istret=0. this parameter doesn't work.
@@ -24,7 +24,7 @@
 
   nxpNew =  385              ! grid point number in x-dir
   nypNew =  193              ! grid point number in y-dir
-  nzpNew =  181              ! grid point number in z-dir
+  nzpNew =  257              ! grid point number in z-dir
   StretTypeNew= 1            ! 0:tangent hyperbolic function, 1:sine/cosine function
   istretNew   = 1            ! Stretch y-mesh or not (For 2nd, 0:no, 1:center, 2:both sides, 3:bottom; For 4th, 0:no, 1:both sides, 2:bottom;)
   cStretNew   = 1.0          ! Stretching parameter, if istret=0. this parameter doesn't work.
@@ -48,7 +48,7 @@
   RunName  = "interp1"    ! Run name
   Res_Dir  = "./"         ! Result directory
   OldRestartName  = "../../CFD/Restart/RestartForCha180_1_0000003000"
-  NewRestartName  = "../../CFD/Restart/RestartForCha180_0000003000"
+  NewRestartName  = "../../CFD/Restart/RestartForCha180_2_0000003000"
   Cmd_LFile_Freq  = 5         ! Report frequency in the terminal
   LF_file_lvl     = 5         ! Logfile report level 
   LF_cmdw_lvl     = 3         ! Terminal report level
