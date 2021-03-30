@@ -68,8 +68,8 @@
   LF_cmdw_lvl     = 3            ! Terminal report level
 
   ! Decomp2d options
-  p_row = 4
-  p_col = 2
+  p_row = 0
+  p_col = 0
 
   ! limited velocity and div
   vel_limit = 2.0
