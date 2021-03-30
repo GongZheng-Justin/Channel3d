@@ -18,10 +18,10 @@
   ! Mesh options
   xlx = 12.56637061      ! domain length in x-dir
   yly = 2.0              ! domain length in y-dir 
-  zlz = 4.188790205      ! domain length in z-dir
+  zlz = 6.283185307      ! domain length in z-dir
   nxp =  385             ! grid point number in x-dir
   nyp =  193             ! grid point number in y-dir
-  nzp =  181             ! grid point number in z-dir
+  nzp =  257             ! grid point number in z-dir
   istret = 1             ! Stretch y-mesh or not (0:no, 1:both sides, 2:bottom)
   cStret = 1.0           ! Stretching parameter, if istret=0. this parameter doesn't work.
 
