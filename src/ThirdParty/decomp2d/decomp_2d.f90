@@ -118,7 +118,7 @@ module decomp_2d
      !============  Add followinglines by Gong Zheng, transpose_x_z purpose ==========
      ! buffer counts, displacements and types for MPI_Alltoallw to transform   
      ! directly between x- and z-pencils                                                            
-     ! This is only for the complex datatype                                                    
+     ! This is only for the real datatype                                                    
      integer,dimension(:),allocatable::zcnts_xz,ztypes_xz                               
      integer,dimension(:),allocatable::xcnts_xz,xtypes_xz                           
 #ifdef MPI3
