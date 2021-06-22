@@ -4,7 +4,7 @@
 #=======================================================================
 
 # The below line is needed to be modified if necessary.
-SRC="./src/"
+SRC="./src"
 CompilingLog="Channel3d_CompilingLog.txt"
 
 #-----------------------------------------------------------------------
@@ -44,6 +44,37 @@ else
 fi
 echo "  "$CMP"  will be used"                                       | tee -a $CompilingLog
 echo                                                                | tee -a $CompilingLog
+
+# Compile FFTW
+echo "  Do you want to recompile FFTW? "                            | tee -a $CompilingLog
+echo "     0: No need, use the old FFTW compilation"                | tee -a $CompilingLog
+echo "     1: Yes, recompile FFTW (Recommended for first use)"      | tee -a $CompilingLog
+read -p "  please type a choice (0 or 1): " FFTW_flag
+echo    "  please type a compiler index (1 or 2): "$FFTW_flag >> $CompilingLog
+echo
+if [ $FFTW_flag -eq 1 ]; then
+  echo "Compiling fftw-3.3.8 (Wait about 2 minutes)....."           | tee -a $CompilingLog
+  echo
+  cd $SRC/ThirdParty
+  rm -rf fftw3 fftw-3.3.8
+  tar -xvf fftw-3.3.8.tar.gz 2>&1 >&/dev/null
+  mkdir -p fftw3 2>&1 >&/dev/null
+  cd ./fftw-3.3.8/
+  if [ $id_cmp -eq 1 ]; then
+    ./configure CC=icc CFLAGS=-gcc --with-our-malloc16 --enable-threads --with-combined-threads --enable-sse2 --prefix=$(pwd)
+  else
+    ./configure CC=gcc --prefix=$(pwd)
+  fi
+  make
+  make install
+  cp lib/libfftw3.a include/fftw3.f ../fftw3/
+  cd ../
+  rm -rf fftw-3.3.8
+  cd ../..
+  echo
+  echo "Compiling fftw-3.3.8 done !"                                | tee -a $CompilingLog
+fi
+echo
 
 echo "  Which EXE do you want to compile? "                         | tee -a $CompilingLog
 echo "     1: channel2nd"                                           | tee -a $CompilingLog
