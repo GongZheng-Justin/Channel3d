@@ -7,7 +7,7 @@
 &BasicParam
 !===================
 
-  RestartFlag = T         ! restart or not
+  RestartFlag = F         ! restart or not
 
   ! Flow type ( 1=Channel, 2=Half channel )
   FlowType  = 1
