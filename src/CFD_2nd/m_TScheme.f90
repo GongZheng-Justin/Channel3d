@@ -100,9 +100,9 @@ module m_TScheme
   public:: InitTimeScheme,FluidVelUpdate
 contains    
 
-#include "m_TSchemeFEXP.inc"
-#include "m_TSchemePIMP.inc"
-#include "m_TSchemeFIMP.inc"
+#include "m_TSchemeFEXP_inc.f90"
+#include "m_TSchemePIMP_inc.f90"
+#include "m_TSchemeFIMP_inc.f90"
 
   !******************************************************************
   ! InitTimeScheme
