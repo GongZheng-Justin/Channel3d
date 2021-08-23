@@ -15,7 +15,7 @@ CFD_dir    =  ./CFD_4th/
 CFDEdir    =  ./ThirdParty/decomp2d/
 
 CFD_DEFS   =
-CFDEDEFS   = -DDOUBLE_PREC -DOVERWRITE -DEVEN
+CFDEDEFS   = -DDOUBLE_PREC -DEVEN
 
 CFD_inc    = -I./ThirdParty/fftw3/
 CFD_lib    = -L./ThirdParty/fftw3/ -lfftw3 -lm
