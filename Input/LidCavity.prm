@@ -38,7 +38,7 @@
   ilast = 1500            ! Last iteration
 
   ! Numerical scheme options
-  ischeme = 2                 ! (1=AB2, 2=RK3 )
+  ischeme = 3                 ! (1=AB2, 2=RK2, 3=RK3)
   IsImplicit= 2               ! (0=full explicit, 1=partial implicit, 2=full implicit )
   FFTW_plan_type = 1          ! (1=FFTW_MEASURE,  2=FFTW_ESTIMATE)
 
@@ -81,7 +81,7 @@
 &LesOptions
 !====================
 
-  ! 0:none; 1:Smagorinsky Model; 2:constant Smagorinsky Model; 3:Dynamic Smagorinsky Model; 4:MTS Model;
+  ! 0:none; 1:Smagorinsky Model; 2:WALE Model; 3:MTS Model;
   LES_type   = 0
 
   ! 0:trapezoidal type, 1:Simpson type
