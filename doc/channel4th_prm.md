@@ -46,7 +46,7 @@
   ilast = 27000          ! Last iteration
 
   ! Numerical scheme options
-  ischeme = 2                 ! (1=AB2, 2=RK3 )
+  ischeme = 3                 ! (1=AB2, 2=RK2, 3=RK3)
   FFTW_plan_type = 1          ! (1=FFTW_MEASURE,  2=FFTW_ESTIMATE)
 
   ! Boundary conditions
@@ -141,7 +141,7 @@
 * `CFLc`: real type. Allowable CFL parameter. If iCFL=2, this parameter will not work.
 * `ifirst`: integer type. First iteration.
 * `ilast`:  integer type. Last iteration.
-* `ischeme`: integer type. Specify the time integral scheme. 1=AB2, 2=RK3.
+* `ischeme`: integer type. Specify the time integral scheme. 1=AB2, 2=RK2, 3=RK3.
 * `FFTW_plan_type`: integer type. 1=FFTW_MEASURE, 2=FFTW_ESTIMATE. **Note:** In my practice, using *FFTW_MEASURE* is faster than *FFTW_ESTIMATE*, while *FFTW_MEASURE* might lead to different *FFTW_plan*, even for the same simulation case. And further, different *FFTW_plan* will result in slight different DFT values (The last several digits of the decimal point might be different). If you want to debug the code, please use *FFTW_ESTIMATE*, which will lead to the same DFT values for a specific case.
 * `uxBcValue`: real vector containing 6 components to specify the u-velocity Bc values, and these values will ONLY be used corresponding to the no-slip Bc.
 * `uyBcValue`: real vector containing 6 components to specify the v-velocity Bc values.
