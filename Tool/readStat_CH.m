@@ -1,6 +1,6 @@
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%
 % This file is used to calculate the statistic results for wall-bounded   %
-%   closed turbulent flows,calculated by Channel3d. Channel3d can be      %
+%   closed turbulent flows, calculated by Channel3d. Channel3d can be     %
 %   freely downloaded from https://github.com/GongZheng-Justin/Channel3d  %
 %                                                                         %
 % There are 12 input parameters below                                     %
