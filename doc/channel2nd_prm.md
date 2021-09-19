@@ -173,7 +173,7 @@
 ## LesOptions
 &emsp;**LesOptions** designates Large-eddy simulation options.
 
-* `LES_type`: integer type. 0:none; 1:Smagorinsky Model; 2:WALE Model; 3:MTS Model  **Note:** Now, ONLY 2:WALE Model and 3:MTS Model is available, and the other LES models will be added in the future.
+* `LES_type`: integer type. 0:none; 1:Smagorinsky Model; 2:WALE Model; 3:MTS Model.  **Note:** Now, ONLY 2:WALE Model and 3:MTS Model is available, and the other LES models will be added in the future.
 * `FilterType`: integer type. LES filter type. 0:trapezoidal type, 1:Simpson type.
 
 ## IO_Options
