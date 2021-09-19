@@ -46,7 +46,7 @@
   ilast = 1000                ! Last iteration
 
   ! Numerical scheme options
-  ischeme = 2                 ! (1=AB2, 2=RK3 )
+  ischeme = 3                 ! (1=AB2, 2=RK2, 3=RK3)
   IsImplicit= 2               ! (0=full explicit, 1=partial implicit, 2=full implicit)
   FFTW_plan_type = 1          ! (1=FFTW_MEASURE,  2=FFTW_ESTIMATE)
 
@@ -89,7 +89,7 @@
 &LesOptions
 !====================
 
-  ! 0:none; 1:Smagorinsky Model; 2:constant Smagorinsky Model; 3:Dynamic Smagorinsky Model; 4:MTS Model;
+  ! 0:none; 1:Smagorinsky Model; 2:WALE Model; 3:MTS Model;
   LES_type   = 0
 
   ! 0:trapezoidal type, 1:Simpson type
@@ -148,7 +148,7 @@
 * `CFLc`: real type. Allowable CFL parameter. If iCFL=2, this parameter will not work.
 * `ifirst`: integer type. First iteration.
 * `ilast`:  integer type. Last iteration.
-* `ischeme`: integer type. Specify the time integral scheme. 1=AB2, 2=RK3.
+* `ischeme`: integer type. Specify the time integral scheme. 1=AB2, 2=RK2, 3=RK3.
 * `IsImplicit`: integer type. Whether the viscous term will be treated implicit or not. 0=full explicit, 1=partial implicit, 2=full implicit.
 * `FFTW_plan_type`: integer type. 1=FFTW_MEASURE, 2=FFTW_ESTIMATE. **Note:** In my practice, using *FFTW_MEASURE* is faster than *FFTW_ESTIMATE*, while *FFTW_MEASURE* might lead to different *FFTW_plan*, even for the same simulation case. And further, different *FFTW_plan* will result in slight different DFT values (The last several digits of the decimal point might be different). If you want to debug the code, please use *FFTW_ESTIMATE*, which will lead to the same DFT values for a specific case.
 * `BcOptio`n: integer vector containing 6 components, and one component is used to specify one boudary conditions. From left to right: x-, x+, y-, y+, z-, z+. (0: periodic conditions for all variables; -1: no slip for three velocity components and ZERO GRADIENT for pressure field; -2: free slip for three velocity components and ZERO GRADIENT for pressure field).
@@ -173,7 +173,7 @@
 ## LesOptions
 &emsp;**LesOptions** designates Large-eddy simulation options.
 
-* `LES_type`: integer type. 0:none; 1:Smagorinsky Model; 2:constant Smagorinsky Model; 3:Dynamic Smagorinsky Model; 4:MTS Model. **Note:** Now, ONLY 4:MTS Model is available, and the other LES models will be added in the future.
+* `LES_type`: integer type. 0:none; 1:Smagorinsky Model; 2:WALE Model; 3:MTS Model **Note:** Now, ONLY 2:WALE Model and 3:MTS Model is available, and the other LES models will be added in the future.
 * `FilterType`: integer type. LES filter type. 0:trapezoidal type, 1:Simpson type.
 
 ## IO_Options
