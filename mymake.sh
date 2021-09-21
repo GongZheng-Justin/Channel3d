@@ -14,9 +14,9 @@ CompilingLog=$PathCurrent/$CompilingLog
 TimeString=$(date  "+%Y-%m-%d %H:%M:%S")
 rm -rf $CompilingLog; touch $CompilingLog
 echo                                                                | tee -a $CompilingLog
-echo "!========================*- CP3d -*========================!" | tee -a $CompilingLog
+echo "!======================*- Channel3d -*=====================!" | tee -a $CompilingLog
 echo "!                                                          !" | tee -a $CompilingLog
-echo "!          CP3d:    Channel-Particle 3d                    !" | tee -a $CompilingLog
+echo "!          Name: Channel3d                                 !" | tee -a $CompilingLog
 echo "!          Version: 1.0                                    !" | tee -a $CompilingLog
 echo "!          Author:  Zheng Gong                             !" | tee -a $CompilingLog
 echo "!          E-mail:  gongzheng_justin@outlook.com           !" | tee -a $CompilingLog
