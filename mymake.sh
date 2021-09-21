@@ -88,7 +88,7 @@ echo                                                                  | tee -a $
 rm -fr $EXE
 cd $SRC
 make -f "make_"$EXE clean >&/dev/null 
-make -f "make_"$EXE CMP=$CMP   2>&1                                   | tee -a $CompilingLog
+make -f "make_"$EXE CMP=$CMP exeName=$EXE  2>&1                       | tee -a $CompilingLog
 echo                                                                  | tee -a $CompilingLog
 mv $EXE $PathCurrent                              
 if [ $? -ne 0 ]; then
