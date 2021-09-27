@@ -8,11 +8,11 @@
 * Alternating Direction Implicit (ADI) method is adopted for Helmholtz equations
 * MPI parallelization by means of pencil distributed decomposition, using [2DECOMP&FFT](http://www.2decomp.org/)
 
-&emsp;Following picture shows the transition process from laminar to turbulent flow for open-channel case (Re_tau =180). The top half of the picture presents the normalized streamwise velocity field, and the bottom half shows the isosurface for Q vortex criterion value at Q+ = 80, colored by streamwise velocity.
-![](doc/cha180_small.gif)
-
 ## How to cite **Channel3d**?
 Z. Gong and X. Fu, A pencil distributed direct numerical simulation solver with versatile treatments for viscous term, Computers and Mathematics with Applications, 2021;100:141-151, https://doi.org/10.1016/j.camwa.2021.09.003.
+
+&emsp;Following picture shows the transition process from laminar to turbulent flow for open-channel case (Re_tau =180). The top half of the picture presents the normalized streamwise velocity field, and the bottom half shows the isosurface for Q vortex criterion value at Q+ = 80, colored by streamwise velocity.
+![](doc/cha180_small.gif)
 
 ## Installation :briefcase:
 &emsp;During developing this solver, I often try my best to make it easy-to-understand and easy-to-use. As for compilation, present solver only has the following two prerequisites:
