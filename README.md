@@ -12,8 +12,9 @@
 ![](doc/cha180_small.gif)
 
 ## How to cite **Channel3d**?
+```
 Z. Gong and X. Fu, A pencil distributed direct numerical simulation solver with versatile treatments for viscous term, Computers and Mathematics with Applications, 2021;100:141-151, https://doi.org/10.1016/j.camwa.2021.09.003.
-
+```
 ## Installation :briefcase:
 &emsp;During developing this solver, I often try my best to make it easy-to-understand and easy-to-use. As for compilation, present solver only has the following two prerequisites:
 
