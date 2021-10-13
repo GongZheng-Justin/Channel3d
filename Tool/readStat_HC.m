@@ -1,19 +1,19 @@
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%
 % This file is used to calculate the statistic results for wall-bounded   %
 %   turbulent OPEN-CHANNEL flows, calculated by Channel3d.                %
-% Channel3d can be freely downloaded from :                               %        
+% Channel3d can be freely downloaded from :                               %
 %   https://github.com/GongZheng-Justin/Channel3d                         %
 %                                                                         %
 % There are 14 input parameters below                                     %
 %   * xlx: Domain length in x-dir                                         %
 %   * zlz: Domain lenght in z-dir                                         %
-%   * nxc: Grid number in x-dir (nxc=nxp-1)                               %                                
+%   * nxc: Grid number in x-dir (nxc=nxp-1)                               %
 %   * nzc: Gird number in z-dir (nzc=nzp-1)                               %
 %   * xnu: Fluid kinematic viscosity                                      %
 %   * iTimeSet: Starting time for statistics calculation                  %
-%   * IsUxConst: Is a constant body force used to drive the flow          %
-%   * BodyForceX:If IsUxConst=1, use BodyForceX to calculate u_tau        %
-%   * jSpecSet: The first y-index for energy spectra calculation          %     
+%   * IsUxConst: Does the mean streamwise velocity keep constant or not?  %
+%   * BodyForceX:If IsUxConst=0, use BodyForceX to calculate u_tau        %
+%   * jSpecSet: The first y-index for energy spectra calculation          %
 %   * jSpecEnd: The last y-index for energy spectra calculation           %
 %   * jSpecInc: The y-index interval for energy spectra                   %
 %   * dir_statIn: The folder to store the original/raw statistic data     %
@@ -22,7 +22,7 @@
 %                                                                         %
 % The final statistic results will be dumped in the folder `dir_statOut`  %
 %   commonly including the following files:                               %
-%   * Profile.txt: Velocity/vorticity/pressure profiles etc.              % 
+%   * Profile.txt: Velocity/vorticity/pressure profiles etc.              %
 %   * kBudget.txt: Budget for TKE                                         %
 %   * uuBudget.txt:Budgtt for <u'u'>                                      %
 %   * vvBudget.txt:Budgtt for <v'v'>                                      %
@@ -54,8 +54,8 @@ nzc=256;
 xnu=2.3310E-4;
 iTimeSet=6000;
 
-IsUxConst=0;    % 1=True; 0=False
-BodyForceX=0;   % If IsUxConst=1, u_tau=sqrt(BodyForceX*height)
+IsUxConst=1;    % 1=True; 0=False
+BodyForceX=0;   % If IsUxConst=0, u_tau=sqrt(BodyForceX*height)
 
 jSpecSet = 5;
 jSpecEnd = 95;
@@ -206,7 +206,7 @@ k=nyp;
 dwdyp(k)=0.0;
 dwdyc=0.5*(dwdyp(1:end-1)+dwdyp(2:end));
 
-if(IsUxConst==0) 
+if(IsUxConst==1) 
   utau1=mean(sqrt(prgrad*height));
   utau2=sqrt(xnu*dudyp(1));
   utaufinal=0.5*(utau1+utau2);
@@ -217,7 +217,6 @@ disp(['utaufinal=',num2str(utaufinal)]);
 vorMag=utaufinal^2/xnu;
 budMag=utaufinal^4/xnu;
 utauSqr=utaufinal^2;
-nych=nyc/2;
 
 %% Profile first
 dataPrf=zeros(nyc,27);
@@ -332,7 +331,7 @@ myformat=[repmat('%24.15E',1,27),'\n'];
 fid=fopen([dir_statOut,'Profile.txt'],'wt');
 strout=' ybar yplus u v w p uRms vRms wRms u''v'' v''w'' u''w'' pRms u''p'' v''p'' w''p'' S(u) S(v) S(w) F(u) F(v) F(w) dudy dwdy wxRms wyRms wzRms';
 fprintf(fid,'%s\n',strout);
-for k=1:nych
+for k=1:nyc
   fprintf(fid,myformat,dataPrf(k,:));
 end
 fclose(fid);
@@ -410,7 +409,7 @@ end
 myformat=[repmat('%24.15E',1,8),'\n'];
 fid=fopen([dir_statOut,'uuBudget.txt'],'wt');
 fprintf(fid,' ybar yplus P T D pi phi epsilon\n');
-for k=1:nych
+for k=1:nyc
   fprintf(fid,myformat,uuBud(k,:));
 end
 fclose(fid);
@@ -481,7 +480,7 @@ end
 myformat=[repmat('%24.15E',1,8),'\n'];
 fid=fopen([dir_statOut,'vvBudget.txt'],'wt');
 fprintf(fid,' ybar yplus P T D pi phi epsilon\n');
-for k=1:nych
+for k=1:nyc
   fprintf(fid,myformat,vvBud(k,:));
 end
 fclose(fid);
@@ -559,7 +558,7 @@ end
 myformat=[repmat('%24.15E',1,8),'\n'];
 fid=fopen([dir_statOut,'wwBudget.txt'],'wt');
 fprintf(fid,' ybar yplus P T D pi phi epsilon\n');
-for k=1:nych
+for k=1:nyc
   fprintf(fid,myformat,wwBud(k,:));
 end
 fclose(fid);
@@ -579,7 +578,7 @@ end
 k=1;
 TranTermp(k)= 2.0*TranTermc(1)/dyc(k);
 k=nyp;
-TranTermp(k)= 0.0; %-2.0*TranTermc(nyc)/dyc(k);
+TranTermp(k)= 0.0;%-2.0*TranTermc(nyc)/dyc(k);
 TranTermc=0.5*(TranTermp(1:end-1)+TranTermp(2:end));
 
 % Viscous Transport
@@ -640,7 +639,7 @@ end
 myformat=[repmat('%24.15E',1,8),'\n'];
 fid=fopen([dir_statOut,'uvBudget.txt'],'wt');
 fprintf(fid,' ybar yplus P T D pi phi epsilon\n');
-for k=1:nych
+for k=1:nyc
   fprintf(fid,myformat,uvBud(k,:));
 end
 fclose(fid);
@@ -659,7 +658,7 @@ end
 myformat=[repmat('%24.15E',1,8),'\n'];
 fid=fopen([dir_statOut,'kBudget.txt'],'wt');
 fprintf(fid,' ybar yplus P T D pi phi epsilon\n');
-for k=1:nych
+for k=1:nyc
   fprintf(fid,myformat,kBud(k,:));
 end
 fclose(fid);
