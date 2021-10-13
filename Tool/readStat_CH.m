@@ -1,19 +1,19 @@
 %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%
 % This file is used to calculate the statistic results for wall-bounded   %
 %   turbulent CLOSED_CHANNEL flows, calculated by Channel3d.              %
-% Channel3d can be freely downloaded from :                               %        
+% Channel3d can be freely downloaded from :                               %
 %   https://github.com/GongZheng-Justin/Channel3d                         %
 %                                                                         %
 % There are 14 input parameters below                                     %
 %   * xlx: Domain length in x-dir                                         %
 %   * zlz: Domain lenght in z-dir                                         %
-%   * nxc: Grid number in x-dir (nxc=nxp-1)                               %                                
+%   * nxc: Grid number in x-dir (nxc=nxp-1)                               %
 %   * nzc: Gird number in z-dir (nzc=nzp-1)                               %
 %   * xnu: Fluid kinematic viscosity                                      %
 %   * iTimeSet: Starting time for statistics calculation                  %
-%   * IsUxConst: Is a constant body force used to drive the flow          %
-%   * BodyForceX:If IsUxConst=1, use BodyForceX to calculate u_tau        %
-%   * jSpecSet: The first y-index for energy spectra calculation          %     
+%   * IsUxConst: Does the mean streamwise velocity keep constant or not?  %
+%   * BodyForceX:If IsUxConst=0, use BodyForceX to calculate u_tau        %
+%   * jSpecSet: The first y-index for energy spectra calculation          %
 %   * jSpecEnd: The last y-index for energy spectra calculation           %
 %   * jSpecInc: The y-index interval for energy spectra                   %
 %   * dir_statIn: The folder to store the original/raw statistic data     %
@@ -22,7 +22,7 @@
 %                                                                         %
 % The final statistic results will be dumped in the folder `dir_statOut`  %
 %   commonly including the following files:                               %
-%   * Profile.txt: Velocity/vorticity/pressure profiles etc.              % 
+%   * Profile.txt: Velocity/vorticity/pressure profiles etc.              %
 %   * kBudget.txt: Budget for TKE                                         %
 %   * uuBudget.txt:Budgtt for <u'u'>                                      %
 %   * vvBudget.txt:Budgtt for <v'v'>                                      %
@@ -54,8 +54,8 @@ nzc=256;
 xnu=2.3310E-4;
 iTimeSet=6000;
 
-IsUxConst=0;    % 1=True; 0=False
-BodyForceX=0;   % If IsUxConst=1, u_tau=sqrt(BodyForceX*height)
+IsUxConst=1;    % 1=True; 0=False
+BodyForceX=0;   % If IsUxConst=0, u_tau=sqrt(BodyForceX*height)
 
 jSpecSet = 5;
 jSpecEnd = 95;
@@ -201,7 +201,7 @@ k=nyp;
 dwdyp(k)=-2.0*dataE(nyc,3)/dyc(k);
 dwdyc=0.5*(dwdyp(1:end-1)+dwdyp(2:end));
 
-if(IsUxConst==0) 
+if(IsUxConst==1) 
   utau1=mean(sqrt(prgrad*height));
   utau2=0.5*(sqrt(xnu*dudyp(1))+sqrt(-xnu*dudyp(nyp)));
   utaufinal=0.5*(utau1+utau2);
