@@ -267,7 +267,7 @@ contains
 
     ! for linear interpolation in y-dir
     do j=0,nyc
-      YinterpCoe(j)= dyp(j)/(dyp(j)+dyp(j+1))
+      YinterpCoe(j)= dyp(j)/(dyp(j)+dyp(j-1))
     enddo
     
     ! Pressure Laplacian metries in y-dir
