@@ -1,0 +1,90 @@
+!
+! -*- input parameter for interpolateField -*-
+!
+! -*- mode: f90 -*-
+
+!===================
+&BasicParam
+!===================
+
+  IsUxConst = T
+  ubulk= 0.66666666666666667
+
+  ! Mesh options
+  yly    =  2.0
+
+  nxcOld =  180              ! grid point number in x-dir
+  nycOld =  132              ! grid point number in y-dir
+  nzcOld =  120              ! grid point number in z-dir
+ 
+  nxcNew =  384              ! grid point number in x-dir
+  nycNew =  192              ! grid point number in y-dir
+  nzcNew =  256              ! grid point number in z-dir  
+
+  ! Boundary conditions
+  !  0: periodic conditions for all variables
+  ! -1: no slip for three velocity components and ZERO GRADIENT for pressure field
+  ! -2: free slip for three velocity components and ZERO GRADIENT for pressure field
+  ! From left to right: 
+  !    x-,  x+,  y-,  y+,  z-,  z+
+  ! And the velocity Bc values will ONLY be used corresponding to the no-slip Bc
+  ! While at the same time, you are allow to assign a  transpiration Bc for uy in y- bottom(uyBcValue(3) dosen't work).
+  BcOption  =  0,   0,   -1,   -1,  0,   0
+  uxBcValue = 0.0, 0.0,  0.0,  0.0,  0.0,  0.0
+  uyBcValue = 0.0, 0.0,  0.0,  0.0,  0.0,  0.0    
+  uzBcValue = 0.0, 0.0,  0.0,  0.0,  0.0,  0.0 
+
+  ! I/O, Statistics
+  RunName  = "interp1"    ! Run name
+  ResultsDir  = "./"      ! Result directory
+  OldRestartName  = "../../CFD/Restart/RestartForCha180_1_0000003000"
+  NewRestartName  = "../../CFD/Restart/RestartForCha180_2_0000003000"
+  Cmd_LFile_Freq  = 5         ! Report frequency in the terminal
+  LF_file_lvl     = 5         ! Logfile report level 
+  LF_cmdw_lvl     = 3         ! Terminal report level
+
+  ! Decomp2d options
+  p_row = 4
+  p_col = 2
+
+/End of NAMELIST "&BasicParam"
+
+!=================
+&MeshSectionOld
+!=================
+
+  nSection      =   2
+  
+/End of NAMELIST "MeshSectionOld"
+
+!=================
+&MeshSectionNew
+!=================
+
+  nSection      =   2
+  
+/End of NAMELIST "MeshSectionNew"
+
+!=================
+&MeshOptionsOld
+!=================
+
+  SectionLength = 1.0  1.0  ! e.g. If nSection=2, and SectionLength=[1,3], yly is further divided into 1/4*yly and 3/4*yly
+  nycSection    =  66   66  ! sum(nycSection)=nyc
+  StretType     =   2    2  ! 0:Uniform; 1:Tangent hyperbolic function; 2:Sine/cosine function; 3:Proportional sequence
+  StretOption   =   0    1  ! 0:bottom;  1:top
+  SectioncStret = 1.0  1.0  ! Stretching parameter. if StretType=0, this parameter doesn't work.
+  
+/End of NAMELIST "MeshOptionsOld"
+
+!=================
+&MeshOptionsNew
+!=================
+
+  SectionLength = 1.0  1.0  ! e.g. If nSection=2, and SectionLength=[1,3], yly is further divided into 1/4*yly and 3/4*yly
+  nycSection    =  96   96  ! sum(nycSection)=nyc
+  StretType     =   2    2  ! 0:Uniform; 1:Tangent hyperbolic function; 2:Sine/cosine function; 3:Proportional sequence
+  StretOption   =   0    1  ! 0:bottom;  1:top
+  SectioncStret = 1.0  1.0  ! Stretching parameter. if StretType=0, this parameter doesn't work.
+  
+/End of NAMELIST "MeshOptionsNew"
