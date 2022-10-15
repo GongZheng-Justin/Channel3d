@@ -64,8 +64,5 @@ mpirun -n 4 ./channel2nd ./Input/LidDrivenCavity.prm
 * Hybrid MPI/OpenMP parallelization and GPU acceleration  
 * **Channel3d** presented here is a part of my integral project: **CP3d**, Channnel-Particle 3d, which is still under development, and will be open-source in the coming future. My ultimate aim for **CP3d** project is to develop an efficient and easy-to-use  particle-laden flow solver, including one-way, two-way, and full four-way coupling methods, by combination with Basset history force model, discrete element method (DEM), and immersed boundary method (IBM).
 
-&emsp;Without those researchers' help, I might do nothing but sleep in the dormitory all the days!!!:joy::joy::joy:   
-&emsp;Thanks so much again and again !!!
-
 ## Contact and Feedback :email:
 &emsp;If you have any question, or want to contribute to the code, please don't hesitate to contact me: Zheng Gong (gongzheng_justin@outlook.com)
