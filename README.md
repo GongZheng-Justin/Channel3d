@@ -6,7 +6,7 @@
 * Second-order spatial accuracy in non-periodic directions, and fourth-order scheme is also available for periodic directions 
 * FFT-based ([FFTW](https://github.com/FFTW/fftw3) used here) method is used for Pressure Poisson Equation (PPE)
 * Alternating Direction Implicit (ADI) method is adopted for Helmholtz equations
-* MPI parallelization by means of pencil distributed decomposition, using [2DECOMP&FFT](http://www.2decomp.org/)
+* MPI parallelization by means of pencil distributed decomposition, using [2DECOMP&FFT](https://github.com/numericalalgorithmsgroup/2decomp_fft)
 
 ## How to cite **Channel3d**?
 &emsp;Z. Gong and X. Fu, A pencil distributed direct numerical simulation solver with versatile treatments for viscous term, Computers and Mathematics with Applications, 2021;100:141-151, https://doi.org/10.1016/j.camwa.2021.09.003.
