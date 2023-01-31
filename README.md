@@ -11,7 +11,7 @@
 ## How to cite **Channel3d**?
 &emsp;Z. Gong and X. Fu, A pencil distributed direct numerical simulation solver with versatile treatments for viscous term, Computers and Mathematics with Applications, 2021;100:141-151, https://doi.org/10.1016/j.camwa.2021.09.003.
 
-## Notice 
+## Notice :newspaper:
 &emsp;**Channel3d** has been integrated into the CFD-DEM sovler [**CP3d**](https://github.com/GongZheng-Justin/CP3d) as a sub-solver.
 
 ## Installation :briefcase:
