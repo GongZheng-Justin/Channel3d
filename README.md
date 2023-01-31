@@ -14,10 +14,6 @@
 ## Notice 
 &emsp;**Channel3d** has been integrated into the CFD-DEM sovler [**CP3d**](https://github.com/GongZheng-Justin/CP3d) as a sub-solver.
 
-## 
-&emsp;Following picture shows the transition process from laminar to turbulent flow for open-channel case (Re_tau =180). The top half of the picture presents the normalized streamwise velocity field, and the bottom half shows the isosurface for Q vortex criterion value at Q+ = 1/80, colored by streamwise velocity.
-![](doc/cha180_small.gif)
-
 ## Installation :briefcase:
 &emsp;During developing this solver, I often try my best to make it easy-to-understand and easy-to-use. As for compilation, present solver only has the following two prerequisites:
 
@@ -68,3 +64,7 @@ mpirun -n 4 ./channel2nd ./Input/LidDrivenCavity.prm
 
 ## Contact and Feedback :email:
 &emsp;If you have any question, or want to contribute to the code, please don't hesitate to contact me: Zheng Gong (gongzheng_justin@outlook.com)
+
+## Showcase
+&emsp;Following picture shows the transition process from laminar to turbulent flow for open-channel case (Re_tau =180). The top half of the picture presents the normalized streamwise velocity field, and the bottom half shows the isosurface for Q vortex criterion value at Q+ = 1/80, colored by streamwise velocity.
+![](doc/cha180_small.gif)
